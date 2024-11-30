@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BladeHeaven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="BladeHeaven Logo">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="story.html">Сюжет</a></li>
+                <li><a href="contact.html">Связаться с нами</a></li>
+                <li><a href="rules.html">Правила</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Как подать заявку?</h1>
+        <p>✨<strong>Подать заявку можно в</strong>:</p>
+        <br><br>
+        <ul>
+            <li><a href="https://t.me/BladeHeavenOfficial"><strong>Телеграм</strong></a></li>
+            <br><br>
+            <li><a href="https://discord.gg/D26BZJ2axH"><strong>Discord</strong></a></li>
+        </ul>
+    </main>
+    
+    <footer>
+        <p>© 2024 BladeHeaven. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

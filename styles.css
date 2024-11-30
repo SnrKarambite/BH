@@ -1,0 +1,171 @@
+/* Общий сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Фиксированный header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #222;
+    position: fixed; /* Фиксированное положение */
+    top: 0; /* Прикрепить к верхней части */
+    left: 0; /* Привязка к левому краю */
+    width: 100%; /* На всю ширину экрана */
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
+}
+
+header img {
+    height: 50px;
+    flex-shrink: 0;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Центровка кнопок */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Расстояние между кнопками */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block; /* Чтобы текст всегда был в центре */
+    text-align: center;
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    border: 2px solid white; /* Белая окантовка */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+}
+
+nav ul li a:hover {
+    background-color: #444; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+.hamburger {
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: #eee;
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Скрытое меню для мобильных устройств */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 100%; /* Меню занимает всю ширину экрана */
+    background-color: #222; /* Фон */
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.nav-menu.active {
+    display: flex;
+    max-height: 400px;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Убираем статическое меню */
+    }
+
+    .hamburger {
+        display: flex; /* Показываем гамбургер */
+    }
+
+    .nav-menu {
+        display: flex; /* Показываем скрытое меню */
+    }
+}
+
+/* Контент (main) */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px; /* Добавляем отступ сверху, чтобы контент не перекрывался фиксированным header */
+}
+
+main a {
+    display: block; /* Чтобы текст всегда был в центре */
+    text-align: center;
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    border: 2px solid white; /* Белая окантовка */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+}
+
+main a:hover {
+    background-color: #444; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Нижний колонтитул */
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 10px;
+}
