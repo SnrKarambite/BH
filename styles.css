@@ -22,7 +22,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    background-color: rgba(34, 34, 34, 0.7); /* Полупрозрачный фон */
+    background-color: rgba(34, 34, 34, 0.8); /* Полупрозрачный фон */
     position: fixed;
     top: 0;
     left: 0;
@@ -72,7 +72,7 @@ header img {
     padding: 8px 12px;
     color: #eee;
     text-decoration: none;
-    background-color: rgba(68, 68, 68, 0.5); /* Более прозрачный фон */
+    background-color: rgba(68, 68, 68, 0.8); /* Полупрозрачный фон */
     transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 5px;
     font-size: 14px;
@@ -85,18 +85,18 @@ header img {
 
 /* Эффект при наведении на кнопки */
 .nav-menu a:hover {
-    background-color: rgba(102, 102, 102, 0.5); /* Более прозрачный фон при наведении */
+    background-color: rgba(102, 102, 102, 0.8); /* Полупрозрачный фон при наведении */
     transform: scale(1.05);
 }
 
 /* Специальные стили для кнопки "Связаться с нами" */
 .nav-menu .contact-us {
-    background-color: rgba(85, 85, 85, 0.5); /* Более прозрачный фон для этой кнопки */
+    background-color: rgba(85, 85, 85, 0.8); /* Полупрозрачный фон для этой кнопки */
 }
 
 /* Увеличение читаемости на мобильных устройствах */
 .nav-menu .contact-us:hover {
-    background-color: rgba(119, 119, 119, 0.5); /* Более прозрачный фон при наведении */
+    background-color: rgba(119, 119, 119, 0.8); /* Полупрозрачный фон при наведении */
 }
 
 /* Контент (main) */
@@ -130,7 +130,7 @@ main a:hover {
 
 /* Нижний колонтитул */
 footer {
-    background-color: rgba(34, 34, 34, 0.7); /* Полупрозрачный фон */
+    background-color: rgba(34, 34, 34, 0.8); /* Полупрозрачный фон */
     color: #eee;
     text-align: center;
     padding: 15px;
