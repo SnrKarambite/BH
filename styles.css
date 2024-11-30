@@ -28,6 +28,7 @@ header {
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Чтобы padding не выходил за пределы */
 }
 
 header img {
@@ -51,7 +52,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5em; /* Переход на гибкие единицы */
+    gap: 1.5em;
 }
 
 nav ul li {
@@ -150,16 +151,20 @@ nav ul li a:hover {
     .nav-menu {
         display: flex;
     }
+
+    header {
+        padding: 10px 3%; /* Уменьшаем padding на мобильных устройствах */
+    }
 }
 
 /* Адаптивность для экранов до 480px */
 @media (max-width: 480px) {
     header {
-        padding: 10px 3%; /* Уменьшение отступов для меньших экранов */
+        padding: 10px 2%; /* Еще меньше padding на маленьких экранах */
     }
 
     nav ul {
-        gap: 1em; /* Уменьшение расстояния между кнопками */
+        gap: 1em;
     }
 
     .hamburger {
@@ -168,7 +173,7 @@ nav ul li a:hover {
     }
 
     nav ul li a {
-        padding: 0.5em 1em; /* Уменьшение размеров кнопок */
+        padding: 0.5em 1em;
     }
 }
 
@@ -182,7 +187,7 @@ main {
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 120px; /* Добавляем отступ сверху для контента */
     color: #eee;
 }
 
@@ -210,7 +215,14 @@ footer {
     color: #eee;
     text-align: center;
     padding: 15px;
-    margin-top: auto;
+    width: 100%; /* Ширина на весь экран */
+    position: relative;
+    box-sizing: border-box; /* Для учета padding в ширине */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
 }
 
 footer a {
@@ -221,4 +233,19 @@ footer a {
 
 footer a:hover {
     color: #fff;
+}
+
+/* Адаптивность для footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    footer a {
+        font-size: 0.8rem;
+    }
 }
