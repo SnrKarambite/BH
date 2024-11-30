@@ -20,13 +20,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 20px; /* Увеличенные отступы для большей высоты */
+    height: 80px; /* Фиксированная высота для header */
+    padding: 0 20px; /* Горизонтальные отступы */
     background-color: #222;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px; /* Установлена фиксированная высота */
     z-index: 10;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
@@ -40,8 +40,7 @@ header img {
 /* Меню и кнопки в header */
 nav {
     display: flex;
-    gap: 10px; /* Пространство между кнопками */
-    width: 100%;
+    gap: 15px; /* Пространство между кнопками */
     justify-content: flex-start; /* Кнопки выровнены по левому краю */
 }
 
@@ -62,8 +61,8 @@ nav a:hover {
 /* Стили для десктопов */
 @media (min-width: 1024px) {
     header {
-        padding: 15px 30px;
-        height: 90px; /* Увеличиваем высоту header на десктопах */
+        padding: 15px 30px; /* Увеличены отступы */
+        height: 90px; /* Увеличена высота header на десктопах */
     }
 
     header img {
@@ -78,8 +77,8 @@ nav a:hover {
 /* Стили для мобильных устройств */
 @media (max-width: 768px) {
     header {
-        padding: 10px 15px;
-        height: 70px; /* Уменьшаем высоту header на мобильных */
+        padding: 10px 15px; /* Уменьшены отступы */
+        height: 70px; /* Уменьшена высота header на мобильных */
     }
 
     header img {
