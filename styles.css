@@ -19,7 +19,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Распределение кнопок по всей ширине */
     height: 80px; /* Фиксированная высота для header */
     padding: 0 20px; /* Горизонтальные отступы */
     background-color: #222;
@@ -40,8 +40,9 @@ header img {
 /* Меню и кнопки в header */
 nav {
     display: flex;
+    justify-content: space-between; /* Кнопки распределяются по ширине */
+    width: 100%;
     gap: 15px; /* Пространство между кнопками */
-    justify-content: flex-start; /* Кнопки выровнены по левому краю */
 }
 
 nav a {
