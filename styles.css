@@ -6,9 +6,9 @@
 }
 
 body {
-    background-color: #121212;
-    color: #ddd;
-    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -19,32 +19,25 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 5%;
-    background-color: #1c1c1c;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    padding: 10px 20px;
+    background-color: #222;
+    position: fixed; /* Фиксированное положение */
+    top: 0; /* Прикрепить к верхней части */
+    left: 0; /* Привязка к левому краю */
+    width: 100%; /* На всю ширину экрана */
     z-index: 10;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-    box-sizing: border-box; /* Чтобы padding не выходил за пределы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
 }
 
 header img {
     height: 50px;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-
-header img:hover {
-    transform: scale(1.1);
 }
 
 nav {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Центровка кнопок */
 }
 
 nav ul {
@@ -52,7 +45,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5em;
+    gap: 15px; /* Расстояние между кнопками */
 }
 
 nav ul li {
@@ -60,24 +53,22 @@ nav ul li {
 }
 
 nav ul li a {
-    display: block;
+    display: block; /* Чтобы текст всегда был в центре */
     text-align: center;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.75em 1.5em;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    background-color: #333;
-    transition: background-color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    border: 2px solid white; /* Белая окантовка */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
 }
 
 nav ul li a:hover {
-    background-color: #444;
-    transform: translateY(-3px);
-    border-color: #fff;
+    background-color: #444; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Эффект увеличения */
 }
 
-/* Гамбургер */
+/* Гамбургер меню */
 .hamburger {
     flex-direction: column;
     cursor: pointer;
@@ -101,19 +92,17 @@ nav ul li a:hover {
     transition: 0.3s ease;
 }
 
-/* Анимация при активации гамбургера */
+/* Анимация для превращения в крестик */
 .hamburger.active div:nth-child(1) {
-    transform: rotate(45deg) translateY(10px);
-    background-color: #f5a623;
+    transform: rotate(45deg) translateY(10px); /* Верхняя линия поворачивается */
 }
 
 .hamburger.active div:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Средняя линия исчезает */
 }
 
 .hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg) translateY(-10px);
-    background-color: #f5a623;
+    transform: rotate(-45deg) translateY(-10px); /* Нижняя линия поворачивается */
 }
 
 /* Скрытое меню для мобильных устройств */
@@ -126,7 +115,7 @@ nav ul li a:hover {
     opacity: 0;
     overflow: hidden;
     width: 100%;
-    background-color: #1c1c1c;
+    background-color: #222;
     position: absolute;
     top: 100%;
     left: 0;
@@ -138,114 +127,69 @@ nav ul li a:hover {
     opacity: 1;
 }
 
+.nav-menu a {
+    padding: 10px 20px;
+    color: #eee;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
 /* Адаптивность для экранов до 768px */
 @media (max-width: 768px) {
     nav ul {
-        display: none;
+        display: none; /* Скрыть меню для мобильных устройств */
     }
 
     .hamburger {
-        display: flex;
+        display: flex; /* Показать гамбургер */
     }
 
     .nav-menu {
-        display: flex;
-    }
-
-    header {
-        padding: 10px 3%; /* Уменьшаем padding на мобильных устройствах */
-    }
-}
-
-/* Адаптивность для экранов до 480px */
-@media (max-width: 480px) {
-    header {
-        padding: 10px 2%; /* Еще меньше padding на маленьких экранах */
-    }
-
-    nav ul {
-        gap: 1em;
-    }
-
-    .hamburger {
-        top: 15px;
-        right: 15px;
-    }
-
-    nav ul li a {
-        padding: 0.5em 1em;
+        display: flex; /* Показать скрытое меню */
     }
 }
 
 /* Контент (main) */
 main {
     flex-grow: 1;
-    padding: 20px 5%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 120px; /* Добавляем отступ сверху для контента */
-    color: #eee;
+    padding-top: 80px; /* Добавляем отступ сверху, чтобы контент не перекрывался фиксированным header */
 }
 
 main a {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    padding: 15px 25px;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    background-color: #333;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    display: block; /* Чтобы текст всегда был в центре */
+    text-align: center;
+    color: white; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    border: 2px solid white; /* Белая окантовка */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
 }
 
 main a:hover {
-    background-color: #444;
-    transform: translateY(-3px);
-    border-color: #fff;
+    background-color: #444; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Эффект увеличения */
 }
 
 /* Нижний колонтитул */
 footer {
-    background-color: #1c1c1c;
+    background-color: #222;
     color: #eee;
     text-align: center;
-    padding: 15px;
-    width: 100%; /* Ширина на весь экран */
-    position: relative;
-    box-sizing: border-box; /* Для учета padding в ширине */
-}
-
-footer p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-footer a {
-    color: #bbb;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-footer a:hover {
-    color: #fff;
-}
-
-/* Адаптивность для footer */
-@media (max-width: 768px) {
-    footer {
-        padding: 10px;
-    }
-
-    footer p {
-        font-size: 1rem;
-    }
-
-    footer a {
-        font-size: 0.8rem;
-    }
+    padding: 10px;
 }
