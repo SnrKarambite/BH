@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    z-index: -1
 }
 
 /* Фиксированный header */
@@ -186,3 +187,46 @@ footer {
         font-size: 16px;
     }
 }
+
+/* Стили для абзацев */
+/* Добавляем темно-серый полупрозрачный фон под текст */
+/* Добавляем более прозрачный темно-серый фон под текст */
+p {
+    position: relative; /* Устанавливаем контекст для псевдоэлемента */
+    color: white; /* Белый цвет текста */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+p::before {
+    content: ''; /* Псевдоэлемент для фона */
+    position: absolute; /* Абсолютное позиционирование для псевдоэлемента */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34, 34, 34, 0.5); /* Более прозрачный темно-серый цвет */
+    z-index: -1; /* Помещаем фон за текстом */
+    border-radius: 20px; /* Увеличиваем скругление углов */
+    padding: 15px; /* Увеличиваем отступы вокруг текста */
+}
+
+
+blockquote {
+    position: relative; /* Устанавливаем контекст для псевдоэлемента */
+    color: white; /* Белый цвет текста */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+blockquote::before {
+    content: ''; /* Псевдоэлемент для фона */
+    position: absolute; /* Абсолютное позиционирование для псевдоэлемента */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34, 34, 34, 0.4); /* Более прозрачный темно-серый цвет */
+    z-index: -1; /* Помещаем фон за текстом */
+    border-radius: 20px; /* Увеличиваем скругление углов */
+    padding: 15px; /* Увеличиваем отступы
