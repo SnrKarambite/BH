@@ -30,42 +30,19 @@ header {
 }
 
 header img {
-    height: 30px; /* Уменьшена высота логотипа */
+    height: 40px; /* Уменьшена высота логотипа для мобильных */
     flex-shrink: 0;
 }
 
-nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center; /* Центровка кнопок */
-}
+/* Стили для десктопов */
+@media (min-width: 1024px) {
+    header {
+        padding: 10px 20px; /* Увеличены отступы для большего хедера */
+    }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 10px; /* Уменьшено расстояние между кнопками */
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    display: block; /* Чтобы текст всегда был в центре */
-    text-align: center;
-    color: white; /* Белый цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 8px 15px; /* Уменьшены отступы */
-    border: 2px solid white; /* Белая окантовка */
-    border-radius: 5px; /* Скругление углов */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
-}
-
-nav ul li a:hover {
-    background-color: #444; /* Цвет фона при наведении */
-    transform: scale(1.05); /* Эффект увеличения */
+    header img {
+        height: 60px; /* Увеличена высота логотипа для десктопа */
+    }
 }
 
 /* Гамбургер меню */
@@ -154,6 +131,14 @@ nav ul li a:hover {
 
     .nav-menu {
         display: flex; /* Показать скрытое меню */
+    }
+
+    header {
+        padding: 5px 10px; /* Ещё меньше отступы на мобильных */
+    }
+
+    header img {
+        height: 30px; /* Уменьшение логотипа для мобильных */
     }
 }
 
