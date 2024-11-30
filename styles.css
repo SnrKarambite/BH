@@ -21,23 +21,23 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #222;
-    position: fixed; /* Фиксированное положение */
-    top: 0; /* Прикрепить к верхней части */
-    left: 0; /* Привязка к левому краю */
-    width: 100%; /* На всю ширину экрана */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 10;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 header img {
-    height: 50px;
+    height: 50px; /* Высота изображения */
     flex-shrink: 0;
 }
 
 nav {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* Центровка кнопок */
+    justify-content: center;
 }
 
 nav ul {
@@ -45,7 +45,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 15px; /* Расстояние между кнопками */
+    gap: 15px;
 }
 
 nav ul li {
@@ -53,27 +53,32 @@ nav ul li {
 }
 
 nav ul li a {
-    display: block; /* Чтобы текст всегда был в центре */
+    display: block;
     text-align: center;
-    color: white; /* Белый цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 10px 20px; /* Отступы вокруг текста */
-    border: 2px solid white; /* Белая окантовка */
-    border-radius: 5px; /* Скругление углов */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #444; /* Цвет фона при наведении */
-    transform: scale(1.05); /* Эффект увеличения */
+    background-color: #444;
+    transform: scale(1.05);
 }
 
 .hamburger {
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 50%; /* Центрируем по вертикали */
+    right: 20px; /* Отступ от правого края */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    width: 50px; /* Ширина hamburger равна ширине картинки */
+    height: 50px; /* Высота hamburger равна высоте картинки */
+    justify-content: space-around;
     z-index: 20;
 }
 
@@ -106,8 +111,8 @@ nav ul li a:hover {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    width: 100%; /* Меню занимает всю ширину экрана */
-    background-color: #222; /* Фон */
+    width: 100%;
+    background-color: #222;
     position: absolute;
     top: 100%;
     left: 0;
@@ -121,15 +126,15 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Убираем статическое меню */
+        display: none;
     }
 
     .hamburger {
-        display: flex; /* Показываем гамбургер */
+        display: flex;
     }
 
     .nav-menu {
-        display: flex; /* Показываем скрытое меню */
+        display: flex;
     }
 }
 
@@ -143,23 +148,23 @@ main {
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 80px; /* Добавляем отступ сверху, чтобы контент не перекрывался фиксированным header */
+    padding-top: 80px;
 }
 
 main a {
-    display: block; /* Чтобы текст всегда был в центре */
+    display: block;
     text-align: center;
-    color: white; /* Белый цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 10px 20px; /* Отступы вокруг текста */
-    border: 2px solid white; /* Белая окантовка */
-    border-radius: 5px; /* Скругление углов */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 main a:hover {
-    background-color: #444; /* Цвет фона при наведении */
-    transform: scale(1.05); /* Эффект увеличения */
+    background-color: #444;
+    transform: scale(1.05);
 }
 
 /* Нижний колонтитул */
