@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 20px; /* Уменьшена высота хедера */
+    padding: 5px 15px; /* Уменьшены отступы для уменьшения высоты хедера */
     background-color: #222;
     position: fixed; /* Фиксированное положение */
     top: 0; /* Прикрепить к верхней части */
@@ -30,7 +30,7 @@ header {
 }
 
 header img {
-    height: 40px; /* Уменьшена высота логотипа */
+    height: 30px; /* Уменьшена высота логотипа */
     flex-shrink: 0;
 }
 
@@ -45,7 +45,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 15px; /* Расстояние между кнопками */
+    gap: 10px; /* Уменьшено расстояние между кнопками */
 }
 
 nav ul li {
@@ -57,7 +57,7 @@ nav ul li a {
     text-align: center;
     color: white; /* Белый цвет текста */
     text-decoration: none; /* Убираем подчеркивание */
-    padding: 10px 20px; /* Отступы вокруг текста */
+    padding: 8px 15px; /* Уменьшены отступы */
     border: 2px solid white; /* Белая окантовка */
     border-radius: 5px; /* Скругление углов */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
@@ -73,11 +73,11 @@ nav ul li a:hover {
     flex-direction: column;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px; /* Уменьшен отступ сверху */
+    right: 15px; /* Уменьшен отступ справа */
     z-index: 20;
-    width: 35px;
-    height: 30px;
+    width: 30px; /* Уменьшен размер гамбургера */
+    height: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,7 +94,7 @@ nav ul li a:hover {
 
 /* Анимация для превращения в крестик */
 .hamburger.active div:nth-child(1) {
-    transform: rotate(45deg) translateY(8px); /* Верхняя линия поворачивается и двигается */
+    transform: rotate(45deg) translateY(7px); /* Верхняя линия поворачивается и двигается */
 }
 
 .hamburger.active div:nth-child(2) {
@@ -102,7 +102,7 @@ nav ul li a:hover {
 }
 
 .hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px); /* Нижняя линия поворачивается и двигается */
+    transform: rotate(-45deg) translateY(-7px); /* Нижняя линия поворачивается и двигается */
 }
 
 /* Скрытое меню для мобильных устройств */
