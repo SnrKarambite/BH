@@ -42,14 +42,27 @@ header img {
     }
 }
 
-/* Убираем систему списка у кнопок */
+/* Контейнер для меню с прокруткой */
+.nav-menu-container {
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    display: flex;
+    justify-content: start; /* Начало прокрутки */
+    padding: 0;
+    width: 100%;
+}
+
+/* Скрыть скроллбар */
+.nav-menu-container::-webkit-scrollbar {
+    display: none;
+}
+
 .nav-menu {
     display: flex;
     justify-content: space-evenly; /* Равномерное распределение кнопок */
     align-items: center;
-    width: 100%;
     list-style: none; /* Убираем стандартные маркеры списка */
     padding: 0;
+    margin: 0;
 }
 
 /* Стили для кнопок */
@@ -64,9 +77,8 @@ header img {
     box-sizing: border-box;
     border: none;
     white-space: nowrap; /* Запрещаем перенос текста внутри кнопки */
-    flex: 1; /* Каждая кнопка будет занимать равную ширину */
-    text-align: center; /* Выравнивание текста по центру */
     min-width: 80px; /* Минимальная ширина кнопки */
+    text-align: center; /* Выравнивание текста по центру */
 }
 
 /* Эффект при наведении на кнопки */
@@ -132,11 +144,15 @@ footer {
         display: none; /* Скрыть логотип на мобильных устройствах */
     }
 
+    .nav-menu-container {
+        overflow-x: auto; /* Горизонтальная прокрутка */
+    }
+
     .nav-menu {
         flex-direction: row; /* Кнопки остаются в строке */
         gap: 5px; /* Уменьшено расстояние между кнопками */
-        width: 100%; /* Кнопки занимают всю ширину */
         padding-left: 0;
+        margin: 0;
     }
 
     .nav-menu a {
