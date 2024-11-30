@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #121212; /* Тёмный фон для всего сайта */
-    color: #ddd; /* Легкий цвет текста */
+    background-color: #121212;
+    color: #ddd;
     font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    padding: 10px 5%;
     background-color: #1c1c1c;
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@ header {
     width: 100%;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease; /* Плавный переход для фона */
+    transition: background-color 0.3s ease;
 }
 
 header img {
@@ -37,7 +37,7 @@ header img {
 }
 
 header img:hover {
-    transform: scale(1.1); /* Эффект увеличения при наведении на изображение */
+    transform: scale(1.1);
 }
 
 nav {
@@ -51,7 +51,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px; /* Увеличено расстояние между кнопками */
+    gap: 1.5em; /* Переход на гибкие единицы */
 }
 
 nav ul li {
@@ -63,7 +63,7 @@ nav ul li a {
     text-align: center;
     color: #fff;
     text-decoration: none;
-    padding: 12px 25px;
+    padding: 0.75em 1.5em;
     border: 2px solid transparent;
     border-radius: 8px;
     background-color: #333;
@@ -72,8 +72,8 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #444;
-    transform: translateY(-3px); /* Легкий сдвиг вверх при наведении */
-    border-color: #fff; /* Подсветка при наведении */
+    transform: translateY(-3px);
+    border-color: #fff;
 }
 
 /* Гамбургер */
@@ -81,8 +81,8 @@ nav ul li a:hover {
     flex-direction: column;
     cursor: pointer;
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 20px;
+    right: 20px;
     z-index: 20;
     width: 40px;
     height: 30px;
@@ -100,10 +100,10 @@ nav ul li a:hover {
     transition: 0.3s ease;
 }
 
-/* Анимация при активации (когда гамбургер превращается в крестик) */
+/* Анимация при активации гамбургера */
 .hamburger.active div:nth-child(1) {
     transform: rotate(45deg) translateY(10px);
-    background-color: #f5a623; /* Цвет первой полоски */
+    background-color: #f5a623;
 }
 
 .hamburger.active div:nth-child(2) {
@@ -112,24 +112,7 @@ nav ul li a:hover {
 
 .hamburger.active div:nth-child(3) {
     transform: rotate(-45deg) translateY(-10px);
-    background-color: #f5a623; /* Цвет третьей полоски */
-}
-
-/* Анимация для обычного состояния */
-.hamburger div:nth-child(1),
-.hamburger div:nth-child(3) {
-    background-color: #eee;
-}
-
-/* Эффект при наведении */
-.hamburger div:hover {
-    background-color: #f5a623; /* Цвет при наведении на полоски */
-    transform: scale(1.1); /* Увеличение полоски */
-}
-
-/* Плавное расширение гамбургера */
-.hamburger:hover {
-    transform: scale(1.1); /* Легкое увеличение всего гамбургера при наведении */
+    background-color: #f5a623;
 }
 
 /* Скрытое меню для мобильных устройств */
@@ -154,6 +137,7 @@ nav ul li a:hover {
     opacity: 1;
 }
 
+/* Адаптивность для экранов до 768px */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -168,17 +152,37 @@ nav ul li a:hover {
     }
 }
 
+/* Адаптивность для экранов до 480px */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 3%; /* Уменьшение отступов для меньших экранов */
+    }
+
+    nav ul {
+        gap: 1em; /* Уменьшение расстояния между кнопками */
+    }
+
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+
+    nav ul li a {
+        padding: 0.5em 1em; /* Уменьшение размеров кнопок */
+    }
+}
+
 /* Контент (main) */
 main {
     flex-grow: 1;
-    padding: 20px;
+    padding: 20px 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 100px; /* Добавлен отступ для избежания перекрытия header */
+    padding-top: 100px;
     color: #eee;
 }
 
@@ -206,7 +210,7 @@ footer {
     color: #eee;
     text-align: center;
     padding: 15px;
-    margin-top: auto; /* Чтобы footer был внизу */
+    margin-top: auto;
 }
 
 footer a {
