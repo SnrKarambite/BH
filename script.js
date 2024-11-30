@@ -19,11 +19,28 @@ function setBackground() {
     const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
     const body = document.body;
 
-    // Добавляем плавный переход фона
-    body.style.transition = 'background-image 1s ease-in-out';
+    // Скрываем все содержимое страницы, показывая только фон
+    document.body.style.visibility = 'hidden';
 
-    // Устанавливаем фоновое изображение
-    body.style.backgroundImage = `url(${randomBackground})`;
+    // Предустанавливаем фоновое изображение с легким фоном (например, однотонный цвет)
+    body.style.backgroundImage = 'url("background-placeholder.jpg")';  // Быстро загружаем однотонный фон
+
+    // Загружаем выбранное изображение
+    const img = new Image();
+    img.src = randomBackground;
+
+    img.onload = function () {
+        // Устанавливаем фоновое изображение сразу после его загрузки
+        body.style.backgroundImage = `url(${randomBackground})`;
+        
+        // Показываем содержимое страницы после загрузки фона
+        document.body.style.visibility = 'visible';
+    };
+
+    img.onerror = function () {
+        // В случае ошибки снова запускаем установку фона
+        setBackground();
+    };
 }
 
 // Предзагружаем все фоны
