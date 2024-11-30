@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px; /* Минимальные отступы для мобильных */
+    padding: 5px 15px; /* Уменьшены отступы для уменьшения высоты хедера */
     background-color: #222;
     position: fixed; /* Фиксированное положение */
     top: 0; /* Прикрепить к верхней части */
@@ -29,20 +29,19 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
 }
 
-/* Логотип */
 header img {
-    height: 30px; /* Уменьшение логотипа для мобильных устройств */
+    height: 40px; /* Уменьшена высота логотипа для мобильных */
     flex-shrink: 0;
 }
 
 /* Стили для десктопов */
 @media (min-width: 1024px) {
     header {
-        padding: 10px 20px; /* Увеличены отступы для большего хедера на десктопах */
+        padding: 10px 20px; /* Увеличены отступы для большего хедера */
     }
 
     header img {
-        height: 60px; /* Увеличенная высота логотипа для десктопа */
+        height: 60px; /* Увеличена высота логотипа для десктопа */
     }
 }
 
@@ -54,8 +53,8 @@ header img {
     top: 15px; /* Уменьшен отступ сверху */
     right: 15px; /* Уменьшен отступ справа */
     z-index: 20;
-    width: 10px; /* Уменьшен размер гамбургера в 1,5 раза */
-    height: 15px;
+    width: 30px; /* Уменьшен размер гамбургера */
+    height: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,7 +88,7 @@ header img {
     flex-direction: column;
     align-items: center;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    max-height: 400;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
     width: 100%;
@@ -101,12 +100,12 @@ header img {
 
 .nav-menu.active {
     display: flex;
-    max-height: 400px; /* Оставил размер меню прежним (400px) */
+    max-height: 400px;
     opacity: 1;
 }
 
 .nav-menu a {
-    padding: 15px 20px; /* Увеличены отступы в меню */
+    padding: 10px 20px;
     color: #eee;
     text-decoration: none;
     border: 2px solid white;
