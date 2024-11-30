@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 8px 20px; /* Уменьшена высота хедера */
     background-color: #222;
     position: fixed; /* Фиксированное положение */
     top: 0; /* Прикрепить к верхней части */
@@ -30,7 +30,7 @@ header {
 }
 
 header img {
-    height: 50px;
+    height: 40px; /* Уменьшена высота логотипа */
     flex-shrink: 0;
 }
 
@@ -76,7 +76,7 @@ nav ul li a:hover {
     top: 20px;
     right: 20px;
     z-index: 20;
-    width: 40px;
+    width: 35px;
     height: 30px;
     display: flex;
     justify-content: space-between;
@@ -94,7 +94,7 @@ nav ul li a:hover {
 
 /* Анимация для превращения в крестик */
 .hamburger.active div:nth-child(1) {
-    transform: rotate(45deg) translateY(10px); /* Верхняя линия поворачивается */
+    transform: rotate(45deg) translateY(8px); /* Верхняя линия поворачивается и двигается */
 }
 
 .hamburger.active div:nth-child(2) {
@@ -102,7 +102,7 @@ nav ul li a:hover {
 }
 
 .hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg) translateY(-10px); /* Нижняя линия поворачивается */
+    transform: rotate(-45deg) translateY(-8px); /* Нижняя линия поворачивается и двигается */
 }
 
 /* Скрытое меню для мобильных устройств */
