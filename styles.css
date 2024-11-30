@@ -45,28 +45,28 @@ header img {
 /* Убираем систему списка у кнопок */
 .nav-menu {
     display: flex;
-    justify-content: space-between; /* Равномерное распределение кнопок по ширине */
+    justify-content: space-evenly; /* Равномерное распределение кнопок */
     align-items: center;
     width: 100%;
-    gap: 15px; /* Расстояние между кнопками */
-    flex-direction: row; /* Горизонтальное размещение кнопок */
     list-style: none; /* Убираем стандартные маркеры списка */
+    padding: 0;
 }
 
 /* Стили для кнопок */
 .nav-menu a {
-    padding: 12px 24px;
+    padding: 8px 12px;
     color: #eee;
     text-decoration: none;
     background-color: #444;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     box-sizing: border-box;
     border: none;
     white-space: nowrap; /* Запрещаем перенос текста внутри кнопки */
-    min-width: 100px; /* Минимальная ширина кнопки */
+    flex: 1; /* Каждая кнопка будет занимать равную ширину */
     text-align: center; /* Выравнивание текста по центру */
+    min-width: 80px; /* Минимальная ширина кнопки */
 }
 
 /* Эффект при наведении на кнопки */
@@ -133,22 +133,21 @@ footer {
     }
 
     .nav-menu {
-        gap: 4px; /* Уменьшено расстояние между кнопками */
         flex-direction: row; /* Кнопки остаются в строке */
-        justify-content: space-between; /* Равномерное распределение по ширине */
+        gap: 5px; /* Уменьшено расстояние между кнопками */
         width: 100%; /* Кнопки занимают всю ширину */
-        padding-left: 1px; /* Уменьшение отступа слева */
+        padding-left: 0;
     }
 
     .nav-menu a {
-        padding: 8px 16px; /* Уменьшены отступы кнопок */
+        padding: 10px 10px; /* Уменьшены отступы кнопок */
         font-size: 12px; /* Уменьшен размер шрифта */
-        max-width: 150px; /* Уменьшена максимальная ширина кнопок */
+        max-width: none; /* Убираем ограничения по ширине */
     }
 
     .nav-menu .contact-us {
         font-size: 12px;
-        padding: 10px 12px; /* Уменьшены отступы */
+        padding: 8px 12px; /* Уменьшены отступы */
     }
 }
 
