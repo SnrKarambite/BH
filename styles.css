@@ -54,7 +54,7 @@ header img {
     top: 15px; /* Уменьшен отступ сверху */
     right: 15px; /* Уменьшен отступ справа */
     z-index: 20;
-    width: 20px; /* Уменьшен размер гамбургера в 1,5 раза */
+    width: 10px; /* Уменьшен размер гамбургера в 1,5 раза */
     height: 15px;
     display: flex;
     justify-content: space-between;
@@ -89,7 +89,7 @@ header img {
     flex-direction: column;
     align-items: center;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    max-height: 0;
+    max-height: 400;
     opacity: 0;
     overflow: hidden;
     width: 100%;
