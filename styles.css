@@ -6,12 +6,17 @@
 }
 
 body {
-    background-image: url('background-placeholder.jpg'); /* Начальный фон */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out; /* Плавный переход фона */
-    will-change: background-image; /* Предупреждаем браузер */
+    background-image: url('background.jpg'); /* Фоновое изображение для body */
+    background-size: cover; /* Покрывает весь экран */
+    background-position: center; /* Центрируем изображение */
+    color: #eee;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: -1
 }
+
 /* Фиксированный header */
 header {
     display: flex;
@@ -225,4 +230,3 @@ blockquote::before {
     z-index: -1; /* Помещаем фон за текстом */
     border-radius: 20px; /* Увеличиваем скругление углов */
     padding: 15px; /* Увеличиваем отступы
-}
