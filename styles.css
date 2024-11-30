@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Основные стили для body */
 body {
     background-color: #111;
     color: #eee;
@@ -19,85 +20,101 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 30px;
+    padding: 15px 20px; /* Увеличенные отступы для большей высоты */
     background-color: #222;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px; /* Установлена фиксированная высота */
     z-index: 10;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Логотип */
 header img {
-    height: 40px;
+    height: 40px; /* Умеренный размер для мобильных */
     flex-shrink: 0;
 }
 
-/* Скрыть логотип на мобильных устройствах */
-@media (max-width: 768px) {
-    header img {
-        display: none;
-    }
-}
-
-/* Контейнер для меню с прокруткой */
-.nav-menu-container {
-    overflow-x: auto; /* Горизонтальная прокрутка */
+/* Меню и кнопки в header */
+nav {
     display: flex;
-    justify-content: start; /* Начало прокрутки */
-    padding: 0;
+    gap: 10px; /* Пространство между кнопками */
     width: 100%;
+    justify-content: flex-start; /* Кнопки выровнены по левому краю */
 }
 
-/* Скрыть скроллбар */
-.nav-menu-container::-webkit-scrollbar {
-    display: none;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-evenly; /* Равномерное распределение кнопок */
-    align-items: center;
-    list-style: none; /* Убираем стандартные маркеры списка */
-    padding: 0;
-    margin: 0;
-}
-
-/* Стили для кнопок */
-.nav-menu a {
-    padding: 8px 12px;
+nav a {
+    padding: 10px 20px;
     color: #eee;
     text-decoration: none;
+    border-radius: 5px;
     background-color: #444;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-    border: none;
-    white-space: nowrap; /* Запрещаем перенос текста внутри кнопки */
-    min-width: 80px; /* Минимальная ширина кнопки */
-    text-align: center; /* Выравнивание текста по центру */
 }
 
-/* Эффект при наведении на кнопки */
-.nav-menu a:hover {
-    background-color: #666;
+nav a:hover {
+    background-color: #555;
     transform: scale(1.05);
 }
 
-/* Специальные стили для кнопки "Связаться с нами" */
-.nav-menu .contact-us {
-    background-color: #555;
+/* Стили для десктопов */
+@media (min-width: 1024px) {
+    header {
+        padding: 15px 30px;
+        height: 90px; /* Увеличиваем высоту header на десктопах */
+    }
+
+    header img {
+        height: 60px; /* Логотип становится крупнее */
+    }
+
+    nav a {
+        padding: 15px 25px; /* Кнопки становятся немного больше */
+    }
 }
 
-/* Увеличение читаемости на мобильных устройствах */
-.nav-menu .contact-us:hover {
-    background-color: #777;
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        height: 70px; /* Уменьшаем высоту header на мобильных */
+    }
+
+    header img {
+        height: 35px; /* Логотип становится меньше */
+    }
+
+    nav {
+        flex-wrap: wrap; /* Кнопки могут переноситься на следующую строку */
+        justify-content: center; /* Центрируем кнопки */
+    }
+
+    nav a {
+        padding: 8px 15px;
+    }
 }
 
-/* Контент (main) */
+/* Нижний колонтитул */
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Убираем точку списка и задаем вертикальное расположение кнопок */
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Дополнительные стили для главного контента */
 main {
     flex-grow: 1;
     padding: 20px;
@@ -124,62 +141,4 @@ main a {
 main a:hover {
     background-color: #444;
     transform: scale(1.05);
-}
-
-/* Нижний колонтитул */
-footer {
-    background-color: #222;
-    color: #eee;
-    text-align: center;
-    padding: 15px;
-}
-
-/* Адаптивность для экранов до 768px */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 15px;
-    }
-
-    header img {
-        display: none; /* Скрыть логотип на мобильных устройствах */
-    }
-
-    .nav-menu-container {
-        overflow-x: auto; /* Горизонтальная прокрутка */
-    }
-
-    .nav-menu {
-        flex-direction: row; /* Кнопки остаются в строке */
-        gap: 5px; /* Уменьшено расстояние между кнопками */
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .nav-menu a {
-        padding: 10px 10px; /* Уменьшены отступы кнопок */
-        font-size: 12px; /* Уменьшен размер шрифта */
-        max-width: none; /* Убираем ограничения по ширине */
-    }
-
-    .nav-menu .contact-us {
-        font-size: 12px;
-        padding: 8px 12px; /* Уменьшены отступы */
-    }
-}
-
-/* Для экранов больше 1024px */
-@media (min-width: 1024px) {
-    .nav-menu {
-        gap: 20px; /* Увеличено расстояние между кнопками на большем экране */
-    }
-
-    .nav-menu a {
-        padding: 12px 24px; /* Увеличены отступы кнопок на ПК */
-        font-size: 16px; /* Увеличен размер шрифта */
-        min-width: 150px; /* Увеличена минимальная ширина кнопок */
-    }
-
-    .nav-menu .contact-us {
-        font-size: 16px;
-    }
 }
